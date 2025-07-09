@@ -2,6 +2,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import axiosInstance from "../../middleware/axiosInstance";
 import errorMiddleware from "../../middleware/errorMiddleware";
 import { message } from "antd";
+import { useGlobalContext } from "../context/useGlobalContext";
 
 export const useAuthQuery = () => {
   return useQuery({
@@ -34,28 +35,36 @@ export const useRegisterMutation = ({ navigate } = {}) => {
 };
 
 export const useLoginMutation = ({ navigate } = {}) => {
+  const { refreshUser } = useGlobalContext();
+
   return useMutation({
     mutationFn: async (userData) => {
       const { data } = await axiosInstance.post(`/auth/login`, userData);
 
-      // Simpan token dan user
-      localStorage.setItem("auth_token", data.token);
-      localStorage.setItem("user_email", data.email);
+      const { _id, username, email, token } = data;
+
+      // Simpan data login ke localStorage
+      localStorage.setItem("auth_token", token);
+      localStorage.setItem("user_email", email);
       localStorage.setItem(
         "user",
         JSON.stringify({
-          username: data.username,
-          email: data.email,
+          id: _id,
+          username,
+          email,
         })
       );
       localStorage.setItem("userData", JSON.stringify(data));
 
       return data;
     },
+
     onSuccess: () => {
+      refreshUser(); // panggil agar context auto update
       if (navigate) navigate("/");
       message.success("Berhasil masuk, selamat datang!");
     },
+
     onError: errorMiddleware,
   });
 };
