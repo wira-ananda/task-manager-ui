@@ -59,12 +59,7 @@ export default function ProjectFormComponent({ open, onClose, onFinish }) {
           <Form.Item
             label="Nama Proyek"
             name="name"
-            rules={[
-              {
-                required: true,
-                message: "Nama proyek wajib diisi!",
-              },
-            ]}
+            rules={[{ required: true, message: "Nama proyek wajib diisi!" }]}
           >
             <Input placeholder="Project Management System" />
           </Form.Item>
@@ -72,12 +67,7 @@ export default function ProjectFormComponent({ open, onClose, onFinish }) {
           <Form.Item
             label="Deskripsi"
             name="description"
-            rules={[
-              {
-                required: true,
-                message: "Deskripsi wajib diisi!",
-              },
-            ]}
+            rules={[{ required: true, message: "Deskripsi wajib diisi!" }]}
           >
             <Input.TextArea
               rows={3}
@@ -88,27 +78,37 @@ export default function ProjectFormComponent({ open, onClose, onFinish }) {
           <Form.Item
             label="Tanggal Mulai"
             name="start_date"
-            rules={[
-              {
-                required: true,
-                message: "Tanggal mulai wajib diisi!",
-              },
-            ]}
+            rules={[{ required: true, message: "Tanggal mulai wajib diisi!" }]}
           >
-            <DatePicker style={{ width: "100%" }} />
+            <DatePicker
+              style={{ width: "100%" }}
+              disabledDate={(current) => {
+                const endDate = form.getFieldValue("end_date");
+                return (
+                  endDate && current && current.isAfter(dayjs(endDate), "day")
+                );
+              }}
+            />
           </Form.Item>
 
           <Form.Item
             label="Tanggal Selesai"
             name="end_date"
             rules={[
-              {
-                required: true,
-                message: "Tanggal selesai wajib diisi!",
-              },
+              { required: true, message: "Tanggal selesai wajib diisi!" },
             ]}
           >
-            <DatePicker style={{ width: "100%" }} />
+            <DatePicker
+              style={{ width: "100%" }}
+              disabledDate={(current) => {
+                const startDate = form.getFieldValue("start_date");
+                return (
+                  startDate &&
+                  current &&
+                  current.isBefore(dayjs(startDate), "day")
+                );
+              }}
+            />
           </Form.Item>
 
           <Form.Item name="status" hidden>

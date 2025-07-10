@@ -12,12 +12,12 @@ export default function ProjectListComponent() {
   const navigate = useNavigate();
   const { userId, user } = useGlobalContext();
 
-  console.log("userId:", userId);
-  console.log("user:", user);
+  // console.log("userId:", userId);
+  // console.log("user:", user);
 
   const { data, isLoading } = useGetAllUserProjects(userId);
 
-  console.log("projects data:", data);
+  // console.log("projects data:", data);
 
   // Gunakan fallback kosong jika undefined
   const projectsUser = data?.projects ?? data ?? [];

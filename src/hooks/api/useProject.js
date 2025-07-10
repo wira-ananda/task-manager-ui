@@ -2,20 +2,40 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../../middleware/axiosInstance";
 import errorMiddleware from "../../middleware/errorMiddleware";
 import { message } from "antd";
+import { useAddUserToProject } from "../api/useProjectUser";
+import { useGlobalContext } from "../context/useGlobalContext";
 
 export const useCreateProject = (options = {}) => {
+  const addUserToProject = useAddUserToProject();
+  const { userId } = useGlobalContext();
+
   return useMutation({
+    ...options,
     mutationFn: async (projectData) => {
-      const { data } = await axiosInstance.post("/projects", projectData);
-      return data;
+      // Buat project
+      const { data: project } = await axiosInstance.post(
+        "/projects",
+        projectData
+      );
+      const projectId = project._id || project.id;
+
+      if (!projectId || !userId) {
+        throw new Error("projectId atau userId tidak tersedia.");
+      }
+
+      // Tambahkan user ke project
+      await addUserToProject.mutateAsync({
+        userId,
+        projectId,
+        role: "manager",
+      });
+
+      return project;
     },
     onSuccess: (data) => {
-      console.log("Proyek berhasil:", data);
-      if (options.onSuccess) options.onSuccess(data);
       message.success("Proyek berhasil dibuat!");
     },
     onError: errorMiddleware,
-    ...options,
   });
 };
 
@@ -28,6 +48,5 @@ export const useGetAllUserProjects = (userId, options = {}) => {
     },
     enabled: !!userId,
     onError: errorMiddleware,
-    ...options,
   });
 };
