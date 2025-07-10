@@ -23,3 +23,14 @@ export const useAddUserToProject = (options = {}) => {
     onError: errorMiddleware,
   });
 };
+
+export const useGetProjectUsers = (projectId) => {
+  return useQuery({
+    queryKey: ["project-users", projectId],
+    queryFn: async () => {
+      const { data } = await axiosInstance.get(`/projects/${projectId}/users`);
+      return data;
+    },
+    onError: errorMiddleware,
+  });
+};

@@ -1,14 +1,22 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { useGlobalContext } from "../hooks/context/useGlobalContext"; // sesuaikan path kamu
+import { Spin } from "antd";
 
 const ProtectedRoute = () => {
-  const token = localStorage.getItem("auth_token");
+  const { token, isLoading } = useGlobalContext(); // atau { user, isLoading }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <Spin tip="Memuat halaman..." size="large" />
+      </div>
+    );
+  }
 
   if (!token) {
-    // Jika belum login, redirect ke halaman login
     return <Navigate to="/login" replace />;
   }
 
-  // Jika sudah login, izinkan akses ke halaman anak (Outlet)
   return <Outlet />;
 };
 

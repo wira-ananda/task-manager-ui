@@ -7,6 +7,8 @@ export const GlobalContextProvider = ({ children }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [userId, setUserId] = useState(null);
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // ✅ auth check in progress
 
   const handlePasswordVisible = () => setPasswordVisible((prev) => !prev);
 
@@ -16,26 +18,39 @@ export const GlobalContextProvider = ({ children }) => {
     localStorage.removeItem("user_email");
     localStorage.removeItem("userData");
 
-    window.location.href = "/login";
+    setUser(null);
+    setToken(null);
+    setUserId(null);
+
     message.success("Berhasil logout.");
+    window.location.href = "/login";
   };
 
   const refreshUser = () => {
     try {
       const storedUser = JSON.parse(localStorage.getItem("user"));
-      if (storedUser) {
+      const storedToken = localStorage.getItem("auth_token");
+
+      if (storedUser && storedToken) {
         setUser(storedUser);
+        setToken(storedToken);
         setUserId(storedUser.id || storedUser._id || null);
+      } else {
+        setUser(null);
+        setToken(null);
+        setUserId(null);
       }
     } catch (error) {
       console.error("Gagal load user dari localStorage:", error);
+    } finally {
+      setIsLoading(false); // ✅ auth loading selesai
     }
   };
 
   useEffect(() => {
     refreshUser();
 
-    // Jika ingin bisa auto update lintas tab (opsional)
+    // Sync update lintas tab (opsional)
     window.addEventListener("storage", refreshUser);
     return () => window.removeEventListener("storage", refreshUser);
   }, []);
@@ -48,7 +63,9 @@ export const GlobalContextProvider = ({ children }) => {
         logout,
         userId,
         user,
-        refreshUser, // expose fungsi refresh
+        token,
+        isLoading,
+        refreshUser,
       }}
     >
       {children}

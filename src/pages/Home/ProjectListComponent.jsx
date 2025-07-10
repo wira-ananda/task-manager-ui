@@ -17,7 +17,7 @@ export default function ProjectListComponent() {
 
   const { data, isLoading } = useGetAllUserProjects(userId);
 
-  // console.log("projects data:", data);
+  console.log("projects data:", data);
 
   // Gunakan fallback kosong jika undefined
   const projectsUser = data?.projects ?? data ?? [];
@@ -65,7 +65,7 @@ export default function ProjectListComponent() {
         <Tooltip title="Lihat Detail">
           <EyeOutlined
             style={{ cursor: "pointer", fontSize: 18 }}
-            onClick={() => navigate(`/project-${record.name}`)} // ✅ fix: function
+            onClick={() => navigate(`/project/${record._id}`)}
           />
         </Tooltip>
       ),

@@ -3,7 +3,7 @@ import Login from "./pages/Auth/LoginPage";
 import RegisterPage from "./pages/Auth/RegisterPage";
 import HomePage from "./pages/Home/HomePage";
 import ProtectedRoute from "./middleware/protectedRoute";
-import Test from "./pages/Test";
+import ProjectDetailPage from "./pages/Project/ProjectDetailPage";
 
 export default function App() {
   return (
@@ -11,16 +11,13 @@ export default function App() {
       {/* Halaman publik */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/test" element={<Test />} />
 
       {/* Halaman yang perlu login */}
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/project/:id" element={<ProjectDetailPage />} />
         {/* Tambahkan route lain di sini jika perlu */}
       </Route>
-
-      {/* Redirect semua path yang tidak cocok ke "/" */}
-      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }

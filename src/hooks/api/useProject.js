@@ -32,7 +32,7 @@ export const useCreateProject = (options = {}) => {
 
       return project;
     },
-    onSuccess: (data) => {
+    onSuccess: () => {
       message.success("Proyek berhasil dibuat!");
     },
     onError: errorMiddleware,
@@ -47,6 +47,45 @@ export const useGetAllUserProjects = (userId, options = {}) => {
       return data;
     },
     enabled: !!userId,
+    onError: errorMiddleware,
+  });
+};
+
+export const useGetProjectById = (projectId, options = {}) => {
+  return useQuery({
+    ...options,
+    queryKey: ["projects", projectId],
+    queryFn: async () => {
+      const { data } = await axiosInstance.get(`/projects/${projectId}`);
+      return data;
+    },
+    enabled: !!projectId, // hanya fetch jika projectId tidak null
+    onError: errorMiddleware,
+  });
+};
+
+export const useUpdateProject = (options = {}) => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    ...options,
+    mutationFn: async ({ projectId, projectData }) => {
+      const { data } = await axiosInstance.put(
+        `/projects/${projectId}`,
+        projectData
+      );
+      return data;
+    },
+    onSuccess: (data) => {
+      message.success("Proyek berhasil diperbarui!");
+      // invalidate or update project list cache supaya data terbaru diambil
+      queryClient.invalidateQueries(["projects"]);
+      // juga invalidate cache detail project jika ada
+      if (data?.name222294) {
+        queryClient.invalidateQueries(["projects", data.name222294]);
+      }
+      if (options.onSuccess) options.onSuccess(data);
+    },
     onError: errorMiddleware,
   });
 };
