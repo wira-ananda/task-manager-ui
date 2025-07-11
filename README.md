@@ -52,14 +52,70 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 
 ## ⚙️ Cara Menjalankan Proyek
 
-Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikuti dibawah ini.
+Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikuti instruksi dibawah ini.
 
---
+---
+### 🔜 Setup Frontend
 
+1. Buka Terminal, lalu masukkan
+```bash
+git clone https://github.com/kamu/task-manager-ui.git
+cd task-manager-ui
+npm install
+npm run dev
+```
+
+📌 Setelah berhasil, struktur folder frontend akan jadi seperti ini:
+```
+project-root/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── hooks/
+│   │   ├── api/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useProject.js
+│   │   │   ├── useProjectUser.js
+│   │   │   ├── useTasks.js
+│   │   │   └── useUser.js
+│   ├── context/
+│   │   └── useGlobalContext.jsx
+│   ├── middleware/
+│   │   ├── axiosInstance.js
+│   │   ├── errorMiddleware.js
+│   │   └── protectedRoute.jsx
+│   ├── pages/
+│   │   ├── Auth/
+│   │   │   ├── LoginPage.jsx
+│   │   │   └── RegisterPage.jsx
+│   │   ├── Home/
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── ProjectFormComponent.jsx
+│   │   │   └── ProjectListComponent.jsx
+│   │   └── Project/
+│   │       ├── ProjectDetailPage.jsx
+│   │       └── TaskListComponent.jsx
+│   ├── utils/
+│   │   └── palette.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+└── vite.config.js
+```
+---
 ### 🔙 Setup Backend
 
-Buka Terminal, lalu masukkan
-
+## 1. Buka Terminal, lalu masukkan
 ```bash
 git clone https://github.com/wira-ananda/task-manager-api-1.git
 cd task-manager-api-1
@@ -67,8 +123,7 @@ npm install
 npm run dev
 ```
 
-Setelah berhasil terinstall, struktur folder akan jadi seperti ini
-
+📌 Setelah berhasil terinstall, struktur folder backend akan jadi seperti ini
 ```
 project-root/
 ├── config/
@@ -89,7 +144,7 @@ project-root/
 │   ├── Task.js
 │   ├── User.js
 │   └── UserProjectProgress.js
-├── node_modules/
+├
 ├── routes/
 │   ├── authRoutes.js
 │   ├── projectRoutes.js
@@ -104,8 +159,8 @@ project-root/
 ├── package-lock.json
 └── server.js
 ```
-> buat file dengan nama `.env`, lalu isi dengan ini:
 
+## 2. Buat file dengan nama `.env`, lalu isi dengan ini:
 ```
 MONGO_URI=mongodb://localhost:27017/taskmanager
 PORT=5000
@@ -113,38 +168,5 @@ NODE_ENV=development
 JWT_SECRET=wiraananda007
 ```
 
---
-
-### 🔜 Setup Frontend
-
-```bash
-git clone https://github.com/kamu/task-manager-ui.git
-cd task-manager-ui
-npm install
-npm run dev
-```
-
-> Pastikan variabel environment mengarah ke backend:
-
-```
-VITE_API_URL=http://localhost:5000/api
-```
-
----
-
-## 📌 Struktur Folder Backend (Contoh)
-
-```
-mongo-api/
-│
-├── controllers/
-├── models/
-├── routes/
-├── middlewares/
-├── config/
-├── utils/
-├── server.js
-└── .env
-```
 
 ---
