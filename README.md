@@ -56,9 +56,11 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 
 ### 🔙 Setup Backend
 
+Buka Terminal, lalu masukkan
+
 ```bash
-git clone https://github.com/kamu/mongo-api.git
-cd mongo-api
+git clone https://github.com/wira-ananda/task-manager-api-1.git
+cd task-manager-api-1
 npm install
 npm run dev
 ```
