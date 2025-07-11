@@ -1,6 +1,3 @@
-Berikut adalah **kode lengkap file `README.md`** untuk proyek Task Manager milikmu, berdasarkan struktur frontend dan backend yang sudah kamu jelaskan:
-
-```markdown
 # 🧠 Task Manager Project
 
 Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres, dan pengelolaan proyek. Backend dibangun dengan Express.js & MongoDB, sedangkan frontend menggunakan React.js dengan Ant Design dan Tailwind CSS.
