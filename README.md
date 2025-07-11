@@ -37,8 +37,6 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 - **Iconify & Ant Design Icons** – ikon UI
 - **Vite** – dev server dan bundler ultra-cepat
 
----
-
 ### 🔧 Backend (`mongo-api`)
 
 - **Node.js** – runtime JavaScript untuk backend
