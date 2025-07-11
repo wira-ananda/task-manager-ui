@@ -55,7 +55,7 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikuti instruksi dibawah ini.
 
 ---
-### 🔜 Setup Frontend
+🔜 Setup Frontend
 
 1. Buka Terminal, lalu masukkan
 ```bash
@@ -113,7 +113,7 @@ project-root/
 └── vite.config.js
 ```
 ---
-### 🔙 Setup Backend
+🔙 Setup Backend
 
 ## 1. Buka Terminal dengan tab baru, lalu masukkan
 ```bash
