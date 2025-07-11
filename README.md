@@ -54,6 +54,8 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 
 Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikuti dibawah ini.
 
+--
+
 ### 🔙 Setup Backend
 
 Buka Terminal, lalu masukkan
@@ -110,6 +112,8 @@ PORT=5000
 NODE_ENV=development
 JWT_SECRET=wiraananda007
 ```
+
+--
 
 ### 🔜 Setup Frontend
 
