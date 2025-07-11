@@ -37,7 +37,7 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 - **Iconify & Ant Design Icons** – ikon UI
 - **Vite** – dev server dan bundler ultra-cepat
 
-### 🔧 Backend (`mongo-api`)
+### 🔧 Backend (`task-manager-api`)
 
 - **Node.js** – runtime JavaScript untuk backend
 - **Express.js** – web framework minimalis
@@ -57,7 +57,7 @@ Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikut
 ---
 ### 🔜 Setup Frontend
 
-1. Buka Terminal dengan tab baru, lalu masukkan
+1. Buka Terminal, lalu masukkan
 ```bash
 git clone https://github.com/kamu/task-manager-ui.git
 cd task-manager-ui
@@ -115,7 +115,7 @@ project-root/
 ---
 ### 🔙 Setup Backend
 
-## 1. Buka Terminal, lalu masukkan
+## 1. Buka Terminal dengan tab baru, lalu masukkan
 ```bash
 git clone https://github.com/wira-ananda/task-manager-api-1.git
 cd task-manager-api-1
