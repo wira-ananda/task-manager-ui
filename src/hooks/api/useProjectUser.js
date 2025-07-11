@@ -6,11 +6,11 @@ import { message } from "antd";
 export const useAddUserToProject = (options = {}) => {
   return useMutation({
     ...options,
-    mutationFn: async ({ projectId, userId, role }) => {
+    mutationFn: async ({ projectId, email, role }) => {
       const { data } = await axiosInstance.post(
         `/projects/${projectId}/users`,
         {
-          user_id: userId,
+          email,
           role,
         }
       );

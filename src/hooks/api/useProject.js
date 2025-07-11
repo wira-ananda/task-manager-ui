@@ -70,7 +70,7 @@ export const useUpdateProject = (options = {}) => {
   return useMutation({
     ...options,
     mutationFn: async ({ projectId, projectData }) => {
-      const { data } = await axiosInstance.put(
+      const { data } = await axiosInstance.patch(
         `/projects/${projectId}`,
         projectData
       );
