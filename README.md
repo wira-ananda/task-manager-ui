@@ -22,6 +22,7 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 - 🔍 Filter dan sorting tugas berdasarkan status & prioritas
 
 ---
+## 🛠️ Teknologi yang Digunakan
 
 ### 🖥️ Frontend (`task-manager-ui`)
 
@@ -37,8 +38,6 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 - **Vite** – dev server dan bundler ultra-cepat
 
 ---
-
-## 🛠️ Teknologi yang Digunakan
 
 ### 🔧 Backend (`mongo-api`)
 
