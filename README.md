@@ -57,7 +57,7 @@ Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikut
 ---
 ### 🔜 Setup Frontend
 
-1. Buka Terminal, lalu masukkan
+1. Buka Terminal dengan tab baru, lalu masukkan
 ```bash
 git clone https://github.com/kamu/task-manager-ui.git
 cd task-manager-ui
