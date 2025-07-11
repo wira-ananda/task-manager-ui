@@ -159,13 +159,17 @@ project-root/
 └── server.js
 ```
 
-## 2. Buat file dengan nama `.env`, lalu isi dengan ini:
+2. Buat file dengan nama `.env`, lalu isi dengan ini:
 ```
 MONGO_URI=mongodb://localhost:27017/taskmanager
 PORT=5000
 NODE_ENV=development
 JWT_SECRET=wiraananda007
 ```
+---
+## 🔙 Setup Database
 
+1. Buka MongoDB Compass, lalu klik 'CONNECT' pada 'localhost:27017'
+[Tampilan MongoDB Compass](https://drive.google.com/file/d/1sX6a8OOj2fNrICmbxg-7SikormEiN4ld/view?usp=sharing)
 
 ---
