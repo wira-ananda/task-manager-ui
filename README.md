@@ -174,20 +174,25 @@ JWT_SECRET=wiraananda007
 ---
 ## 🔙 Running Program
 
-1. Buka Terminal dengan tab baru, lalu masukkan
+1. (Running Frontend) Buka Terminal dengan tab baru, lalu masukkan
 ```bash
 cd task-manager-ui
 npm run dev
 ```
 
-2. Buka Terminal dengan tab baru, lalu masukkan
+2. (Running Backend) Buka Terminal dengan tab baru, lalu masukkan
 ```bash
 cd task-manager-api-1
+npm run seed
 npm run dev
 ```
 
 3. Buka http://localhost:5173/ di chrome
 
-4. Lakukan 'REGISTER' jika belum memiliki akun
+4. Data sudah ada saat menjalankan seeder (npm run seed), data usernya sendiri yaitu:
+> username : user  
+> email : user@gmail.com  
+> password : qazwsx
+
 
 5. 'LOGIN' dan fitur website nya pun sudah bisa diakses.
