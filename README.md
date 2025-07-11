@@ -115,7 +115,7 @@ project-root/
 ---
 🔙 Setup Backend
 
-## 1. Buka Terminal dengan tab baru, lalu masukkan
+1. Buka Terminal dengan tab baru, lalu masukkan
 ```bash
 git clone https://github.com/wira-ananda/task-manager-api-1.git
 cd task-manager-api-1
