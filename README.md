@@ -54,7 +54,6 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 
 Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikuti instruksi dibawah ini.
 
----
 ## 🔜 Setup Frontend
 
 1. Buka Terminal, lalu masukkan
