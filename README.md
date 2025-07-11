@@ -54,6 +54,8 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 
 ## ⚙️ Cara Menjalankan Proyek
 
+Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikuti dibawah ini.
+
 ### 🔙 Setup Backend
 
 Buka Terminal, lalu masukkan
@@ -65,12 +67,49 @@ npm install
 npm run dev
 ```
 
-> Ubah konfigurasi `.env` seperti berikut:
+Setelah berhasil terinstall, struktur folder akan jadi seperti ini
+
+project-root/
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── authController.js
+│   ├── projectController.js
+│   ├── projectUserController.js
+│   ├── taskController.js
+│   ├── userController.js
+│   └── userProjectProgressController.js
+├── middlewares/
+│   ├── authMiddleware.js
+│   └── errorMiddleware.js
+├── models/
+│   ├── Project.js
+│   ├── ProjectUser.js
+│   ├── Task.js
+│   ├── User.js
+│   └── UserProjectProgress.js
+├── node_modules/
+├── routes/
+│   ├── authRoutes.js
+│   ├── projectRoutes.js
+│   ├── projectUserRoutes.js
+│   ├── taskRoutes.js
+│   └── userRoutes.js
+├── utils/
+│   └── calculateProgress.js
+├── .env (BUAT BARU, DISINI)
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── server.js
+
+> buat file dengan nama `.env`, lalu isi dengan ini:
 
 ```
-PORT=5000
 MONGO_URI=mongodb://localhost:27017/taskmanager
-JWT_SECRET=your_secret_key
+PORT=5000
+NODE_ENV=development
+JWT_SECRET=wiraananda007
 ```
 
 ### 🔜 Setup Frontend
