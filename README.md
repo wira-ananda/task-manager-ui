@@ -1,12 +1,52 @@
-# React + Vite
+# 🧠 Task Manager Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek ini adalah aplikasi manajemen tugas berbasis web dengan frontend React.js dan backend Node.js + Express, serta database NoSQL MongoDB menggunakan ODM Mongoose.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Struktur Repositori
 
-## Expanding the ESLint configuration
+- **Frontend (UI):** [`task-manager-ui`](https://github1s.com/wira-ananda/task-manager-ui)
+- **Backend (API):** [`task-manager-api-1`](https://github1s.com/wira-ananda/task-manager-api-1)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Fitur Utama
+
+- Autentikasi pengguna (Login/Register)
+- Manajemen proyek
+- Manajemen tugas dalam proyek
+- Penugasan user ke proyek
+- Progress tracking per user per proyek
+- Statistik proyek berdasarkan task
+- Filtering dan pengurutan berdasarkan status dan prioritas
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+### Backend:
+
+- **Node.js** + **Express.js**
+- **MongoDB** dengan **Mongoose**
+- **JWT** untuk autentikasi
+- **Dotenv**, **CORS**, **Morgan** dll.
+
+### Frontend:
+
+- **React.js**
+- **React Router DOM**
+- **React Query (tanstack)**
+- **Ant Design (Antd)**
+- **Tailwind CSS**
+- **Axios**
+
+---
+
+## ⚙️ Setup Backend
+
+### 1. Clone Repositori Backend
+
+```bash
+git clone https://github.com/wira-ananda/task-manager-api-1.git
+cd task-manager-api-1
