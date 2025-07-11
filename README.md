@@ -6,8 +6,8 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 
 ## 📁 Struktur Repositori
 
-- **Frontend (UI):** `task-manager-ui`
-- **Backend (API):** `mongo-api`
+- **Frontend (UI):** [task-manager-ui](https://github.com/wira-ananda/task-manager-ui)
+- **Backend (API):** [task-manager-api](https://github.com/wira-ananda/task-manager-api-1)
 
 ---
 
@@ -20,37 +20,6 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 - 📊 Pelacakan progres user terhadap proyek
 - 📈 Statistik proyek berdasarkan task
 - 🔍 Filter dan sorting tugas berdasarkan status & prioritas
-
----
-
-## 🛠️ Teknologi yang Digunakan
-
-### 🔧 Backend (`mongo-api`)
-
-- **Node.js** – runtime JavaScript untuk backend
-- **Express.js** – web framework minimalis
-- **MongoDB** + **Mongoose** – database NoSQL dan ODM
-- **JWT (jsonwebtoken)** – otentikasi token
-- **bcryptjs** – hashing password
-- **dotenv** – manajemen konfigurasi environment
-- **cors** – mengizinkan permintaan lintas-origin
-- **Nodemon** – pengembangan dengan auto-reload
-
-#### 📦 Dependencies:
-
-```json
-"dependencies": {
-  "bcryptjs": "^3.0.2",
-  "cors": "^2.8.5",
-  "dotenv": "^17.1.0",
-  "express": "^5.1.0",
-  "jsonwebtoken": "^9.0.2",
-  "mongoose": "^8.16.2"
-},
-"devDependencies": {
-  "nodemon": "^3.1.10"
-}
-```
 
 ---
 
@@ -67,39 +36,20 @@ Aplikasi manajemen tugas berbasis web dengan fitur kolaborasi, pelacakan progres
 - **Iconify & Ant Design Icons** – ikon UI
 - **Vite** – dev server dan bundler ultra-cepat
 
-#### 📦 Dependencies:
+---
 
-```json
-"dependencies": {
-  "@ant-design/icons": "^6.0.0",
-  "@iconify/react": "^6.0.0",
-  "@tailwindcss/vite": "^4.1.11",
-  "@tanstack/react-query": "^5.81.5",
-  "antd": "^5.26.4",
-  "autoprefixer": "^10.4.21",
-  "axios": "^1.10.0",
-  "dayjs": "^1.11.13",
-  "file-saver": "^2.0.5",
-  "postcss": "^8.5.6",
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "react-router-dom": "^7.6.3",
-  "tailwindcss": "^4.1.11",
-  "xlsx": "^0.18.5"
-},
-"devDependencies": {
-  "@eslint/js": "^9.30.1",
-  "@tailwindcss/postcss": "^4.1.11",
-  "@types/react": "^19.1.8",
-  "@types/react-dom": "^19.1.6",
-  "@vitejs/plugin-react": "^4.6.0",
-  "eslint": "^9.30.1",
-  "eslint-plugin-react-hooks": "^5.2.0",
-  "eslint-plugin-react-refresh": "^0.4.20",
-  "globals": "^16.3.0",
-  "vite": "^7.0.3"
-}
-```
+## 🛠️ Teknologi yang Digunakan
+
+### 🔧 Backend (`mongo-api`)
+
+- **Node.js** – runtime JavaScript untuk backend
+- **Express.js** – web framework minimalis
+- **MongoDB** + **Mongoose** – database NoSQL dan ODM
+- **JWT (jsonwebtoken)** – otentikasi token
+- **bcryptjs** – hashing password
+- **dotenv** – manajemen konfigurasi environment
+- **cors** – mengizinkan permintaan lintas-origin
+- **Nodemon** – pengembangan dengan auto-reload
 
 ---
 
