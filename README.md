@@ -62,7 +62,6 @@ Note: Folder terpisah antara frontend dan backend, lakukan satu persatu dan ikut
 git clone https://github.com/kamu/task-manager-ui.git
 cd task-manager-ui
 npm install
-npm run dev
 ```
 
 📌 Setelah berhasil, struktur folder frontend akan jadi seperti ini:
@@ -120,7 +119,6 @@ project-root/
 git clone https://github.com/wira-ananda/task-manager-api-1.git
 cd task-manager-api-1
 npm install
-npm run dev
 ```
 
 📌 Setelah berhasil terinstall, struktur folder backend akan jadi seperti ini
@@ -170,6 +168,26 @@ JWT_SECRET=wiraananda007
 ## 🔙 Setup Database
 
 1. Buka MongoDB Compass, lalu klik 'CONNECT' pada 'localhost:27017'
+
 ![Tampilan MongoDB Compass](./public//gambar-readme-1.png)
 
 ---
+## 🔙 Running Program
+
+1. Buka Terminal dengan tab baru, lalu masukkan
+```bash
+cd task-manager-ui
+npm run dev
+```
+
+2. Buka Terminal dengan tab baru, lalu masukkan
+```bash
+cd task-manager-api-1
+npm run dev
+```
+
+3. Buka http://localhost:5173/ di chrome
+
+4. Lakukan 'REGISTER' jika belum memiliki akun
+
+5. 'LOGIN' dan fitur website nya pun sudah bisa diakses.
