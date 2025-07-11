@@ -144,7 +144,6 @@ project-root/
 │   ├── Task.js
 │   ├── User.js
 │   └── UserProjectProgress.js
-├
 ├── routes/
 │   ├── authRoutes.js
 │   ├── projectRoutes.js
