@@ -69,6 +69,7 @@ npm run dev
 
 Setelah berhasil terinstall, struktur folder akan jadi seperti ini
 
+```
 project-root/
 ├── config/
 │   └── db.js
@@ -97,12 +98,12 @@ project-root/
 │   └── userRoutes.js
 ├── utils/
 │   └── calculateProgress.js
-├── .env (BUAT BARU, DISINI)
+├── .env (BUAT BARU, PASTIKAN PATH/LOKASI NYA SESUAI)
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
 └── server.js
-
+```
 > buat file dengan nama `.env`, lalu isi dengan ini:
 
 ```
